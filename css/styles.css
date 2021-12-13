@@ -1,0 +1,820 @@
+*,*::before,*::after{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+    display: flex; 
+    flex-direction: column;
+    min-height: 100%;
+}
+
+/******************************** HOMEPAGE ***************************************/
+
+.homepage {
+    text-align:center;
+    background: linear-gradient(60deg, rgba(84,58,183,1) 0%, rgba(0,172,193,1) 100%);
+    color:white;
+    margin-top: 70px;
+  }
+  .inner-homepage {
+    height:65vh;
+    width:100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .inner-homepage .h1_homepage{
+    font-size: 60px;
+    margin-bottom: 10px;
+  }
+  
+  .flex { /*Flexbox for containers*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .waves {
+    position:relative;
+    width: 100%;
+    height:15vh;
+    margin-bottom:-7px; /*Fix for safari gap*/
+    min-height:100px;
+    max-height:150px;
+  }
+  
+  /* Animation */
+  
+  .parallax > use {
+    animation: move-forever 25s cubic-bezier(.55,.5,.45,.5)     infinite;
+  }
+  .parallax > use:nth-child(1) {
+    animation-delay: -2s;
+    animation-duration: 7s;
+  }
+  .parallax > use:nth-child(2) {
+    animation-delay: -3s;
+    animation-duration: 10s;
+  }
+  .parallax > use:nth-child(3) {
+    animation-delay: -4s;
+    animation-duration: 13s;
+  }
+  .parallax > use:nth-child(4) {
+    animation-delay: -5s;
+    animation-duration: 20s;
+  }
+  @keyframes move-forever {
+    0% {
+     transform: translate3d(-90px,0,0);
+    }
+    100% { 
+      transform: translate3d(85px,0,0);
+    }
+  }
+  /*Shrinking for mobile*/
+  @media (max-width: 768px) {
+    .waves {
+      height:40px;
+      min-height:40px;
+    }
+    .content {
+      height:30vh;
+    }
+    h1 {
+      font-size:24px;
+    }
+}
+
+/*************************** Carrousel **********************/
+.content_all {
+    width: 100%;
+    background-color: #F2F8FC;
+    margin: 50px 0;
+}
+
+.carousel-wrapper {
+    height: 400px;
+    position: relative;
+    max-width: 1024px;
+    width: 100%;
+    display: block;
+    margin: 50px auto;
+    border-radius: 8px;
+}
+
+.carousel-item {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 25px 50px;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+}
+
+.arrow{
+    border: 4px solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 12px;
+  }
+  .arrow-prev {
+    left: 30px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) rotate(135deg);
+  
+  }
+  .arrow-next {
+    right: 30px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) rotate(-45deg);
+  }
+
+  [id^= "item"] {
+    display: none;
+  }
+  .item-1 {
+   
+  }
+  .item-2 {
+   
+  }
+  .item-3 {
+    
+   
+  }
+
+  .item-4 {
+    
+    
+  }
+  
+  *:target ~ .item-1{
+    opacity: 0;
+  }
+  #item-1:target ~ .item-1 {
+    opacity: 1;
+  
+  }
+  #item-2:target ~ .item-2, #item-3:target ~ .item-3 , #item-4:target ~ .item-4{
+    z-index: 3;
+    opacity: 1;
+  } 
+
+
+
+/************************ NavBar ***************************/
+header {
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+    position: fixed;
+    z-index: 1000;
+}
+
+header .nav {
+    height: 70px;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+header .nav .navbar ul{
+    list-style: none;
+}
+
+header .nav .navbar ul li {
+    position: relative;
+    float: left;
+}
+
+header .nav .navbar ul li  .active{
+    border-bottom: 4px solid navy;
+}
+
+header .nav .navbar ul li a {
+    font-size: 20px;
+    padding: 10px 13px;
+    font-weight: bold;
+    color: grey;
+    display: block;
+    text-decoration: none;
+}
+
+header .nav .navbar ul li a i{
+    padding-left: 10px;
+}
+
+header .nav .navbar ul li a:hover {
+    background: #333;
+    color: white;
+}
+
+header .nav .navbar ul li ul {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    background: white;
+    display: none;
+}
+
+header .nav .navbar ul li ul li{
+    width: 100%;
+    border-top: 1px solid rgba(0, 0, 0, 0.4); 
+}
+
+header .nav .navbar ul li:focus-within > ul, 
+header .nav .navbar ul li:hover > ul { 
+    display: initial;
+}
+
+#menu-bar {
+    display: none;
+}
+
+header .nav label {
+    font-size: 30px;
+    color: darkgrey;
+    padding-right: 10px;
+    cursor: pointer;
+    display: none;
+}
+
+@media screen and (max-width: 858px){
+   
+    header .nav{
+        padding: 20px;
+    }
+    
+    header .nav label {
+        display: initial;
+    }
+
+    header .nav .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: slategrey;
+        border-top: 1px solid rgba(0, 0, 0, 0.4);
+        height: 100vh;
+        display: none;
+    }
+
+    header .nav .navbar ul li {
+        width: 100%;
+        text-align: center;
+    }
+
+    header .nav .navbar ul li .active{
+        background-color: rgba(0, 0, 0, 0.4);
+        border: none;
+    }
+    header .nav .navbar ul li a{
+        color: white;
+        padding: 20px 0;
+    }
+
+    header .nav .navbar ul li ul {
+        position: relative;
+        width: 100%;
+    }
+
+    header .nav .navbar ul li ul li {
+        background: rgba(0, 0, 0, 0.4);
+    }
+
+    #menu-bar:checked ~ .navbar {
+        display: initial;
+    }
+
+}
+
+/************************** Vista de Nosotros **************************/
+
+.content_about {
+    background-color: #F2F8FC;
+}
+
+.content_about .title_about {
+    max-width: 1024px;
+    margin: 0 auto;
+    margin-top: 90px;
+    margin-bottom: 20px;
+    color: #003866;
+}
+
+.content_about .img_about .image_desktop{
+    width: 100%;
+    height: 500px;
+}
+
+.content_about .img_about .image_mobile{
+    display: none;
+}
+
+.content_information_about {
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+.content_information_about .title_about{
+    margin: 20px;
+    font-size: 24px;
+}
+
+.content_information_about .paragraph_about {
+    font-size: 16px;
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.content_information_about .list_about{
+    margin: 20px;
+    margin-bottom: 40px;
+}
+
+.content_information_about .list_about ul{
+    margin: 15px 50px;
+}
+
+@media screen and (max-width: 858px){ 
+    .content_about .img_about .image_desktop{
+        display: none;
+    }
+    
+    .content_about .img_about .image_mobile{
+        display: initial;
+        width: 100%;
+    }
+
+    .content_about .title_about {
+        margin-left: 20px;
+    }
+}
+
+/************************** Vista de Productos ************************/
+.content_products {
+    background-color: #F2F8FC;
+}
+
+.content_products .title_products {
+    max-width: 1024px;
+    margin: 0 auto;
+    margin-top: 90px;
+    margin-bottom: 20px;
+    color: #003866;
+}
+
+.content_products .img_products .image_desktop{
+    width: 100%;
+    height: 500px;
+}
+
+.content_products .img_products .image_mobile{
+    display: none;
+}
+
+.content_products .paragraph_products {
+    max-width: 1024px;
+    margin: 30px auto;
+}
+
+.content_products .paragraph_products p{
+    text-align: justify;
+    margin-bottom: 20px;
+    font-size: 16px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.content_information_products_first {
+    background-color: white;
+    padding: 10px 0;
+}
+
+.content_information_products_first .card{
+    display: flex;
+    flex-direction: row;
+    max-width: 1024px;
+    height: 400px;
+    margin: 0 auto;
+}
+
+.content_information_products_first .card .card_information{
+    width: 100%;
+    display: grid;
+    padding: 0 20px;
+    align-self: center;
+}
+
+.content_information_products_first .card .card_information .title_card{
+    margin-bottom: 20px;
+}
+
+.content_information_products_first .card .card_information .title_card h1{
+    color: #003866;
+    font-size: 32px;
+}
+
+.content_information_products_first .card .card_information hr{
+    background-color: #003866;
+    height: 5px;
+    margin-top: 10px;
+    width: 50%;
+    border: none;
+}
+
+.content_information_products_first .card .card_information .paragraph_card p {
+    font-size: 20px;
+    text-align: justify;
+}
+
+.content_information_products_first .card .img_card{
+    width: 100%; 
+}
+
+.content_information_products_first .card .img_card img{
+    width: 100%;
+    height: 400px;   
+}
+
+.content_information_products_second {
+    background: linear-gradient(60deg, rgba(84,58,183,1) 0%, rgba(0,172,193,1) 100%);
+    padding: 10px 0;
+}
+
+.content_information_products_second .card{
+    display: flex;
+    flex-direction: row;
+    max-width: 1024px;
+    height: 400px;
+    margin: 0 auto;
+}
+
+.content_information_products_second .card .card_information{
+    width: 100%;
+    display: grid;
+    padding: 0 20px;
+    align-self: center;
+}
+
+.content_information_products_second .card .card_information .title_card{
+    margin-bottom: 20px;
+}
+
+.content_information_products_second .card .card_information .title_card h1{
+    color: white;
+    font-size: 32px;
+}
+
+.content_information_products_second .card .card_information hr{
+    background-color: white;
+    height: 5px;
+    margin-top: 10px;
+    width: 50%;
+    border: none;
+}
+
+.content_information_products_second .card .card_information .paragraph_card p {
+    font-size: 20px;
+    text-align: justify;
+    color: white;
+}
+
+.content_information_products_second .card .img_card{
+    width: 100%;  
+}
+
+.content_information_products_second .card .img_card img{
+    width: 100%;
+    height: 400px;  
+}
+
+.content_information_products_third {
+    padding: 10px 0;    
+}
+
+.content_information_products_third .card{
+    display: flex;
+    flex-direction: row;
+    max-width: 1024px;
+    height: 400px;
+    margin: 0 auto;
+}
+
+.content_information_products_third .card .card_information{
+    width: 100%;
+    display: grid;
+    padding: 0 20px;
+    align-self: center;
+}
+
+.content_information_products_third .card .card_information .title_card{
+    margin-bottom: 20px;
+}
+
+.content_information_products_third .card .card_information .title_card h1{
+    color: #003866;
+    font-size: 32px;
+}
+
+.content_information_products_third .card .card_information hr{
+    background-color: #003866;
+    height: 5px;
+    margin-top: 10px;
+    width: 50%;
+    border: none;
+}
+
+.content_information_products_third .card .card_information .paragraph_card p {
+    font-size: 20px;
+    text-align: justify;
+}
+
+.content_information_products_third .card .img_card{
+    width: 100%; 
+}
+
+.content_information_products_third .card .img_card img{
+    width: 100%;
+    height: 400px;   
+}
+
+@media screen and (max-width: 858px){ 
+    .content_products .img_products .image_desktop{
+        display: none;
+    }
+    
+    .content_products .img_products .image_mobile{
+        display: initial;
+        width: 100%;
+    }
+
+    .content_products .title_products {
+        margin-left: 20px;
+    }
+
+    .content_information_products_first .card{
+        flex-direction: column;
+        height: auto;
+        margin: 10px 20px;
+    }
+
+    #card_two, #card_fourth , #card_sixth , #card_eighth {
+        flex-direction: column-reverse;
+    }
+
+    .content_information_products_first .card .card_information .paragraph_card p {
+        margin-bottom: 20px;
+    }
+
+    .content_information_products_second .card{
+        flex-direction: column;
+        height: auto;
+        margin: 10px 20px;
+    }
+
+    .content_information_products_second .card .card_information .paragraph_card p {
+        margin-bottom: 20px;
+    }
+
+    .content_information_products_third .card{
+        flex-direction: column;
+        height: auto;
+        margin: 10px 20px;
+    }
+
+    .content_information_products_third .card .card_information .paragraph_card p {
+        margin-bottom: 20px;
+    }
+}
+
+
+/************************ Vista de Contacto **********************/
+.content_contact {
+    background-color: white;
+    padding-top: 85px;
+}
+
+.content_contact .title {
+    max-width: 1024px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.content_contact .title h1{
+    font-size: 32px;
+    color: #003866;
+}
+
+.contact {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    column-gap: 60px;
+    justify-items: center;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 8px;
+    border: 2px solid #003866;
+    padding: 10px; 
+    margin: 0 auto;
+    margin-bottom: 40px;
+    max-width: 1024px;
+    background-color: #F2F8FC;
+}
+
+.contact .contact_form {
+    width: 100%;
+    margin: 10px;
+    padding: 10px;
+    
+}
+
+.contact .contact_form h2{
+    color: #003866;
+}
+
+.contact .contact_form .form {
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    margin: 10px 0;
+}
+
+.contact .contact_form .form .form_input label{
+    font-size: 16px;
+}
+
+.contact .contact_form .form span{
+    color: red;
+}
+
+.contact .contact_form .form input{
+    width: 100%;
+    height: 40px;
+    border-radius: 3px;
+    border: 1px solid darkgray;
+    font-size: 16px;
+    padding: 0 10px;   
+}
+
+.contact .contact_form .form .form_input {
+    padding: 10px 0;
+}
+
+.contact .contact_form .form .form_input_message { 
+    display: grid;
+    grid-template-columns: repeat(1,1fr); 
+}
+
+.contact .contact_form .form .form_input_message textarea{ 
+    resize: none;
+    border: 1px solid darkgrey;
+    border-radius: 3px;
+}
+
+.contact .contact_form .form .form_input_button{
+    display: grid;
+    justify-items: right;
+    padding: 10px 0;
+}
+
+.contact .contact_form .form .form_input_button button {
+    width: 50%;
+    height: 40px;
+    font-size: 16px;
+    border: 1px solid darkgrey;
+    cursor: pointer;
+    border-radius: 3px;
+    background-color: lightslategray;
+    box-shadow: -1px 1px 8px rgba(0, 0, 0, 0.4);
+}
+.contact .contact_information {
+    width: 100%;
+    margin: 10px;
+    padding: 10px;
+}
+
+.contact .contact_information h2{
+    color: #003866;
+}
+
+.contact .contact_information .container {
+    width: 100%;
+}
+
+.contact .contact_information .container .content_p {
+    display: flex;
+    flex-direction: row;
+    margin: 20px 0;
+}
+
+.contact .contact_information .container .content_p p{
+    font-size: 20px;
+}
+
+.contact .contact_information .container i{
+    
+    width: 100%;
+    padding: 0 20px;
+    color: #003866;  
+}
+
+@media screen and (max-width: 858px){  
+
+    .content_contact .title {
+        margin: 20px;
+    }
+    .contact {
+        grid-template-columns: repeat(1,1fr);
+        margin: 0 20px;
+        margin-bottom: 30px;
+    }
+
+   
+}
+
+/************************** Vista Marcas *******************************/
+.main_trademarks {
+    width: 100vw;
+    height: 100vh;
+    background-color: #F2F8FC;
+}
+
+.main_trademarks .content_trademarks {
+    max-width: 1024px;
+    margin: 0 auto;
+    margin-top: 100px;
+    margin-bottom: 30px;
+}
+
+.main_trademarks .content_trademarks .title_trademarks h1{
+    margin-bottom: 20px;
+    color: #003866;;
+    font-size: 32px;
+}
+
+.main_trademarks .content_trademarks .subtitle_trademarks {
+    margin-bottom: 20px;
+}
+
+.main_trademarks .content_trademarks .subtitle_trademarks p{
+    margin-bottom: 20px;
+    font-size: 16px;
+    text-align: justify;
+}
+
+.main_trademarks .content_trademarks .img_trademarks{
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.main_trademarks .content_trademarks .img_trademarks img{
+    width: 100%;
+}
+
+@media screen and (max-width: 858px){ 
+    .main_trademarks .content_trademarks {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
+
+/********************* Footer *****************************/
+
+footer {
+    display: flex;
+    margin-top: auto;
+    text-align: center;
+    background: white;
+    border-top: 1px solid slategray;
+    align-items: center;
+    justify-content: center;
+    height: 65px;
+}
+.content_footer {
+    color: slategray;
+}
+
+
