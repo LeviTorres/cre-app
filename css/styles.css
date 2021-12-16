@@ -34,8 +34,12 @@ body {
   }
 
   .inner-homepage .h1_homepage{
-    font-size: 60px;
+    font-size: 80px;
     margin-bottom: 10px;
+  }
+
+  .inner-homepage .subtitle_homepage{
+    font-size: 50px;
   }
   
   .flex { /*Flexbox for containers*/
