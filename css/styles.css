@@ -128,6 +128,7 @@ body {
 
 .container_body .container_title i{
     color: #003866;
+    margin-bottom: 30px;
 }
 
 .container_body .container_title h1{
@@ -216,6 +217,7 @@ body {
 
 .container_body_trademarks .container_title_trademarks i{
     color: #003866;
+    margin-bottom: 30px;
 }
 
 .container_body_trademarks .container_title_trademarks h1{
@@ -419,34 +421,44 @@ header .nav label {
 /************************** Vista de Nosotros **************************/
 
 .content_about {
+    padding-top: 71px;
     background-color: #F2F8FC;
+    height: 100%;
 }
 
-.content_about .title_about {
-    max-width: 1024px;
+.content_about .content_image_about {
+    background-size: cover;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url(../images/img-about-desktop.jpg);
+    background-position: top;
+    background-repeat: no-repeat;
+    height: 300px;
+}
+
+.content_about .content_image_about .title_about{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 1440px;
     margin: 0 auto;
-    margin-top: 90px;
-    margin-bottom: 20px;
-    color: #003866;
+    height: 100%;
+    padding-left: 20px;
 }
 
-.content_about .img_about .image_desktop{
-    width: 100%;
-    height: 500px;
-}
-
-.content_about .img_about .image_mobile{
-    display: none;
+.content_about .content_image_about .title_about h1{
+    font-size: 40px;
+    font-weight: 600;
+    color: white;
 }
 
 .content_information_about {
-    max-width: 1024px;
+    max-width: 1440px;
     margin: 0 auto;
 }
 
 .content_information_about .title_about{
     margin: 20px;
     font-size: 24px;
+    color: #003866;
 }
 
 .content_information_about .paragraph_about {
@@ -467,44 +479,42 @@ header .nav label {
 }
 
 @media screen and (max-width: 858px){ 
-    .content_about .img_about .image_desktop{
-        display: none;
-    }
-    
-    .content_about .img_about .image_mobile{
-        display: initial;
-        width: 100%;
-    }
 
-    .content_about .title_about {
-        margin-left: 20px;
-    }
 }
 
 /************************** Vista de Productos ************************/
 .content_products {
     background-color: #F2F8FC;
+    height: 100%;
+    padding-top: 72px;
 }
 
-.content_products .title_products {
-    max-width: 1024px;
+.content_products .content_products_image {
+    background-size: cover;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url(../images/pipe-desktop.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 300px;
+}
+
+.content_products .content_products_image .title_products{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 1440px;
     margin: 0 auto;
-    margin-top: 90px;
-    margin-bottom: 20px;
-    color: #003866;
-}
+    height: 100%;
+    padding-left: 20px;
+ }
 
-.content_products .img_products .image_desktop{
-    width: 100%;
-    height: 500px;
-}
-
-.content_products .img_products .image_mobile{
-    display: none;
+.content_products  .content_products_image .title_products h1 {
+    font-size: 40px;
+    font-weight: 600;
+    color: white;
 }
 
 .content_products .paragraph_products {
-    max-width: 1024px;
+    max-width: 1440px;
     margin: 30px auto;
 }
 
@@ -661,27 +671,34 @@ header .nav label {
 }
 
 .content_information_products_third .card .img_card{
-    width: 100%; 
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 8px;
+    width: 100%;
+    height: 300px;
 }
 
 .content_information_products_third .card .img_card img{
-    width: 100%;
-    height: 400px;   
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+    border-radius: 8px;  
 }
 
-@media screen and (max-width: 858px){ 
-    .content_products .img_products .image_desktop{
-        display: none;
-    }
-    
-    .content_products .img_products .image_mobile{
-        display: initial;
-        width: 100%;
-    }
+.container_items_trademarks .container_card_trademarks .container_picture_trademarks img{
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+    border-radius: 8px;
+}  
 
-    .content_products .title_products {
-        margin-left: 20px;
-    }
+@media screen and (max-width: 858px){ 
+    
 
     .content_information_products_first .card{
         flex-direction: column;
@@ -721,19 +738,57 @@ header .nav label {
 
 /************************ Vista de Contacto **********************/
 .content_contact {
-    background-color: white;
-    padding-top: 85px;
+    background-color: #F2F8FC;
+    padding-top: 70px;
+    height: 100%;
 }
 
-.content_contact .title {
-    max-width: 1024px;
+.content_contact .content_image {
+    background-size: cover;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url(../images/contact.jpg);
+    background-position: top;
+    background-repeat: no-repeat;
+    height: 300px;
+    
+}
+
+.content_contact .content_image .title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 1440px;
     margin: 0 auto;
-    margin-bottom: 20px;
+    height: 100%;
+    padding-left: 20px;
 }
 
-.content_contact .title h1{
+.content_contact  .content_image  .title h1{
+    font-size: 40px;
+    font-weight: 600;
+    color: white;
+}
+
+.content_contact  .content_image  .title p{
+    font-size: 20px;
+    color: orange;
+}
+
+.content_contact .contact_call {
+    margin: 0 auto;
+    max-width: 1440px;
+    text-align: center;
+    padding-top: 40px;
+}
+
+.content_contact .contact_call h2{
     font-size: 32px;
     color: #003866;
+}
+
+.content_contact .contact_call span{
+    color: orange;
+    font-size: 38px;
+    font-weight: 700;
 }
 
 .contact {
@@ -741,21 +796,16 @@ header .nav label {
     grid-template-columns: repeat(2,1fr);
     column-gap: 60px;
     justify-items: center;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    border-radius: 8px;
-    border: 2px solid #003866;
     padding: 10px; 
     margin: 0 auto;
     margin-bottom: 40px;
-    max-width: 1024px;
-    background-color: #F2F8FC;
+    max-width: 1440px;
 }
 
 .contact .contact_form {
     width: 100%;
     margin: 10px;
     padding: 10px;
-    
 }
 
 .contact .contact_form h2{
@@ -818,8 +868,7 @@ header .nav label {
 }
 .contact .contact_information {
     width: 100%;
-    margin: 10px;
-    padding: 10px;
+    
 }
 
 .contact .contact_information h2{
@@ -828,6 +877,7 @@ header .nav label {
 
 .contact .contact_information .container {
     width: 100%;
+    background-color: #F2F8FC;
 }
 
 .contact .contact_information .container .content_p {
@@ -841,7 +891,6 @@ header .nav label {
 }
 
 .contact .contact_information .container i{
-    
     width: 100%;
     padding: 0 20px;
     color: #003866;  
@@ -862,49 +911,50 @@ header .nav label {
 }
 
 /************************** Vista Marcas *******************************/
-.main_trademarks {
-    width: 100vw;
-    height: 100vh;
+.content_trademarks {
     background-color: #F2F8FC;
+    margin-top: 70px;
+    height: 100%;
+}
+.content_trademarks .content_image_trademarks {
+    background-size: cover;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url(../images/trademarks_logo.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 300px;
 }
 
-.main_trademarks .content_trademarks {
-    max-width: 1024px;
+.content_trademarks .content_image_trademarks .title_trademarks{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 1440px;
     margin: 0 auto;
-    margin-top: 100px;
-    margin-bottom: 30px;
+    height: 100%;
+    padding-left: 20px;
 }
 
-.main_trademarks .content_trademarks .title_trademarks h1{
-    margin-bottom: 20px;
-    color: #003866;;
-    font-size: 32px;
+.content_trademarks .content_image_trademarks .title_trademarks h1{
+    font-size: 40px;
+    font-weight: 600;
+    color: white;
 }
 
-.main_trademarks .content_trademarks .subtitle_trademarks {
-    margin-bottom: 20px;
+.content_trademarks .subtitle_trademarks {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 30px;
 }
 
-.main_trademarks .content_trademarks .subtitle_trademarks p{
-    margin-bottom: 20px;
+.content_trademarks .subtitle_trademarks p{
     font-size: 16px;
     text-align: justify;
 }
 
-.main_trademarks .content_trademarks .img_trademarks{
-    width: 100%;
-    margin-bottom: 40px;
-}
-
-.main_trademarks .content_trademarks .img_trademarks img{
-    width: 100%;
-}
-
 @media screen and (max-width: 858px){ 
-    .main_trademarks .content_trademarks {
-        margin-left: 20px;
-        margin-right: 20px;
-    }
+    
 }
 
 /********************* Footer *****************************/
