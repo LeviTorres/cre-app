@@ -880,6 +880,8 @@ header .nav label {
     resize: none;
     border: 1px solid darkgrey;
     border-radius: 3px;
+    font-size: 16px;
+    padding: 10px;
 }
 
 .contact .contact_form .form .form_input_button{
@@ -895,7 +897,7 @@ header .nav label {
     border: 1px solid darkgrey;
     cursor: pointer;
     border-radius: 3px;
-    background-color: lightslategray;
+    background-color: orange;
     box-shadow: -1px 1px 8px rgba(0, 0, 0, 0.4);
 }
 .contact .contact_information {
