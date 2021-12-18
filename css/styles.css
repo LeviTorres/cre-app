@@ -894,6 +894,9 @@ header .nav label {
     width: 50%;
     height: 40px;
     font-size: 16px;
+    color: white;
+    font-weight: 700;
+    letter-spacing: 2px;
     border: 1px solid darkgrey;
     cursor: pointer;
     border-radius: 3px;
