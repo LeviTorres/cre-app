@@ -42,23 +42,30 @@
         </div>
         <div class="contact">
             <div class="contact_form">
-                <form class="form" action="https://formsubmit.co/levi962009@gmail.com" method="post">
+                <form class="form" action="https://formsubmit.co/levi962009@gmail.com"  method="POST" id="form">
                     <div class="form_input">
                         <label for="name">Nombre<span> *</span></label>
-                        <input type="text" name="name" id="name" required>
+                        <input class="form_error_input" type="text" name="name" id="name" required minlength="1" title="Nombre requerido" autocomplete="off">
+                        <p class="form_error_p" id="name_error"></p>
                     </div>
                     <div class="form_input">  
                         <label for="email">Correo electrónico<span> *</span></label>
-                        <input type="email" name="email" id="email" required>
+                        <input class="form_error_input" type="email" name="email" id="email" required pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" title="Correo electrónico requerido" autocomplete="off">
+                        <p class="form_error_p" id="email_error"></p>
                     </div>
                     <div class="form_input">
-                        <label for="asunto">Asunto<span> *</span></label>
-                        <input type="text" name="subject" id="asunto" required>
+                        <label for="subject">Asunto<span> *</span></label>
+                        <input class="form_error_input" type="text" name="subject" id="subject" required minlength="1" title="Asunto requerido" autocomplete="off">
+                        <p class="form_error_p" id="subject_error"></p>
                     </div>
+                    
                     <div class="form_input_message">
                         <label for="message">Mensaje<span> *</span></label>
-                        <textarea name="message" name="message" id="message" cols="30" rows="10" required></textarea>
+                        <textarea class="form_error_input" name="message" name="message" id="message" cols="30" rows="10" required minlength="1" title="Mensaje requerido" autocomplete="off"></textarea>
+                        <p class="form_error_p" id="message_error"></p>
                     </div>
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="http://127.0.0.1:5500/views/thanks.html">
                     <div class="form_input_button">
                         <button type="submit" class="button">ENVIAR</button>
                     </div>  
@@ -103,6 +110,19 @@
             </div>
         </div>
     </div> 
+
+  <!--  
+    <div id="miModal">
+        <div class="modal-contenido">
+        <div class="msg">
+            <h2>MENSAJE ENVIADO CON EXITO</h2>
+        </div>
+        <div class="close-btn" id="close">  
+          <a href="../views/contact.html"><i class="fas fa-times"></i></a>
+        </div>
+        </div>  
+    </div>
+-->
     <footer>
        <p class="content_footer"> &copy; CRE Sistemas Control y Bombeo </p>
     </footer>
