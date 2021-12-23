@@ -1118,7 +1118,32 @@ footer {
 }
 
 .container_information_thanks {
-    background-color: #666666;
     margin: 0 auto;
     max-width: 1440px;
+    text-align: center;
+}
+
+.container_information_thanks h1{
+    color: #003866;
+    font-weight: 800;
+    padding-bottom: 20px;
+}
+.container_information_thanks button{
+    max-width: 400px;
+    height: 40px;
+    font-size: 16px;
+    color: white;
+    font-weight: 700;
+    letter-spacing: 2px;
+    border: 1px solid darkgrey;
+    cursor: pointer;
+    border-radius: 3px;
+    background-color: orange;
+    box-shadow: -1px 1px 8px rgba(0, 0, 0, 0.4);
+}    
+
+.container_information_thanks button a{ 
+    text-decoration: none;
+    color: white;
+    padding: 20px;
 }
